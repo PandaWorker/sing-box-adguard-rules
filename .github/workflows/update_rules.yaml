@@ -18,7 +18,7 @@ jobs:
           curl -Lo sing-box.tar.gz "https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | jq -r .tag_name | sed 's/v//')-linux-amd64.tar.gz"
           tar -xzf sing-box.tar.gz
           rm ./sing-box.tar.gz
-          export SING_BOX_DIR_NAME $(ls)
+          export SING_BOX_DIR_NAME="$(ls)"
           cd ..
 
       - name: Download AdGuard Filter
