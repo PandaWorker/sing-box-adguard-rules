@@ -5,7 +5,7 @@ on:
   workflow_dispatch:    # Allows you to trigger it manually for testing
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repo
