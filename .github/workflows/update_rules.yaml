@@ -18,7 +18,6 @@ jobs:
           curl -Lo sing-box.tar.gz "https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | jq -r .tag_name | sed 's/v//')-linux-amd64.tar.gz"
           tar -xzf sing-box.tar.gz
           rm ./sing-box.tar.gz
-          ls > ./sing-box-dir-name
           cd ..
 
       - name: Download AdGuard Filter
@@ -26,7 +25,7 @@ jobs:
 
       - name: Compile to SRS
         run: |
-          .tmp/$(cat .tmp/sing-box-dir-name)/sing-box rule-set convert --type adguard -o adguard.srs blocklist
+          .tmp/sing-box-*/sing-box rule-set convert --type adguard -o ads.srs blocklist
 
       - name: Commit and Push if changed
         run: |
