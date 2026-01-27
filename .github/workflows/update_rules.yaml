@@ -23,7 +23,7 @@ jobs:
       - name: Download AdGuard Filter
         run: |
           rm ./blocklist
-          curl -Lo blocklist https://raw.githubusercontent.com/ppfeufer/adguard-filter-list/refs/heads/master/blocklist
+          curl -Lo blocklist https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
       - name: Compile to SRS
         run: |
